@@ -1,35 +1,14 @@
-var diabloApp = angular.module('diabloApp', []);
+var diabloApp = angular.module('diabloApp', ['ngRoute']);
 
+diabloApp.config(function ($routeProvider){
+	$routeProvider
+	.when('/heroes/:id', {
+		controller: 'heroesController',
+		templateUrl: '../templates/Heroes.html'
+	})
+	.otherwise({
+		controller: 'homeController',
+		templateUrl: '../templates/Index.html'
+	})
+});
 
-(function(){
-
-	var homeController = function ($scope, $http){
-
-		$scope.newBattleTag = function(battleTag){
-			$http({
-				url:'getJson',
-				method: 'GET',
-				params: {battle_tag: battleTag}
-			}).success(function(data){
-				console.log('Live games')
-				console.log(data);
-				$scope.data = data;
-			});
-
-		}
-
-		$scope.newBattleTag('melayish#1811')
-
-		$scope.checkArray = function(item){
-			if(!(item instanceof Object)){
-				return true
-			}
-		}
-
-	}
-
-	homeController.$inject = ['$scope', '$http'];
-
-	diabloApp.controller('homeController', homeController);
-
-}());

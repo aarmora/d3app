@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="diabloApp" ng-controller="homeController">
+<body ng-app="diabloApp">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -39,12 +39,6 @@
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="battleTag" placeholder="Melayish#1811">
-          </div>
-          <button type="submit" ng-click="newBattleTag(battleTag)" class="btn btn-default">Submit</button>
-        </form>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Link</a></li>
           <li class="dropdown">
@@ -61,8 +55,8 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
-<%= yield %>
-
+  <div class="container-fluid" ng-view>
+    <%= yield %>
+  </div>
 </body>
 </html>
