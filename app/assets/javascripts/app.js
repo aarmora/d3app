@@ -28,7 +28,7 @@ var diabloApp = angular.module('diabloApp', []);
 
 	}
 
-	homeController.$injext = ['$scope', '$http'];
+	homeController.$inject = ['$scope', '$http'];
 
 	diabloApp.controller('homeController', homeController);
 
