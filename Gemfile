@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 #bnet api
 gem 'omniauth-bnet'
 
+#assets on heroku
+gem 'rails_12factor', group: :production
+
 # gem for managing environment variables (bnet webapi key)
 gem 'figaro'
 
