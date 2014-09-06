@@ -1,0 +1,24 @@
+
+<div class="container-fluid">
+  <h3>Account information</h3>
+  <div class="container">
+    <div class="row" ng-repeat="(key, item) in data">
+      <div class="col-md-12" ng-if="checkArray(item)">{{key}} : {{item}}</div>      
+    </div>    
+  </div>
+  <h3>Last Played Hero</h3>
+  <div class="container">
+    <div class="row" ng-repeat="hero in data.heroes">
+      <div class="col-md-12" ng-if="hero.id === data.lastHeroPlayed" ng-repeat="(key, item) in hero">{{key}} : {{item}}</div>
+    </div>
+  </div>
+  <h3>Other Heroes</h3>
+  <div class="container">
+    <div class="row" ng-repeat="hero in data.heroes">
+      <div class="col-md-12" ng-if="hero.id !== data.lastHeroPlayed" ng-repeat="(key, item) in hero">
+        {{key}} : {{item}}
+      </div>
+      <span ng-if="hero.id !== data.lastHeroPlayed" >------------</span>
+    </div>
+  </div>  
+</div>
