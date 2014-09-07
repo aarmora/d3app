@@ -11,8 +11,9 @@
 			}).success(function(data){
 				console.log(data);
 				$scope.data = data;
+				$scope.splitBattleTagName = data.battleTag.split("#");
+				console.log($scope.splitBattleTagName);
 			});
-
 		}
 
 		$scope.newBattleTag('melayish#1811')

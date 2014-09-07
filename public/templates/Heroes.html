@@ -6,22 +6,29 @@
 			<div class="col-md-6">Level</div>
 			<div class="col-md-6">{{data.level}}</div>
 		</div>
-		<div class="cold-md-8">z</div>
+	</div>
+	<div class="row">
 		<div class="col-md-4">
 			<div class="col-md-6">Paragon Level</div>
 			<div class="col-md-6">{{data.paragonLevel}}</div>
 		</div>
-		<div class="cold-md-8">z</div>
+		<div class="col-md-8"></div>
+	</div>
+	<div class="row">
 		<div class="col-md-4">
 			<div class="col-md-6">Last Played</div>
 			<div class="col-md-6">{{data.last-updated | date}}</div>
 		</div>
-		<div class="cold-md-8">z</div>
+		<div class="col-md-8"></div>
+	</div>
+	<div class="row">
 		<div class="col-md-4">
 			<div class="col-md-6">Elite Kills</div>
 			<div class="col-md-6">{{data.kills.elites}}</div>
 		</div>
-		<div class="cold-md-8">z</div>
+		<div class="col-md-8"></div>
+	</div>
+	<div class="row">
 		<h4>Skills</h4>
 		<h5>Active</h5>
 		<div ng-repeat="activeSkill in data.skills.active">
@@ -34,6 +41,8 @@
 				<div class="col-md-8">{{activeSkill.rune.name}}</div>
 			</div>
 		</div>
+	</div>
+	<div class="row">
 		<h5>Passive</h5>
 		<div ng-repeat="passiveSkill in data.skills.passive">
 			<div class="col-md-12">
@@ -41,11 +50,23 @@
 				<div class="col-md-10">{{passiveSkill.skill.name}}</div>
 			</div>
 		</div>
+	</div>
+	<div class="row">
 		<h4>Stats</h4>
 		<div ng-repeat="(key, stat) in data.stats">
 			<div class="col-md-12">
 				<div class="col-md-2">{{key}}</div>
 				<div class="col-md-10">{{stat}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<h4>Items</h4>
+		<div ng-repeat="(key, item) in data.items">
+			<div class="col-md-12">
+				<img class="col-md-1" src="http://us.media.blizzard.com/d3/icons/items/large/{{item.icon}}.png" />
+				<div class="col-md-3">{{key}}</div>
+				<div class="col-md-8">{{item}}</div>				
 			</div>
 		</div>
 	</div>

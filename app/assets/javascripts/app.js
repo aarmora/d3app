@@ -2,7 +2,7 @@ var diabloApp = angular.module('diabloApp', ['ngRoute']);
 
 diabloApp.config(['$routeProvider', function ($routeProvider){
 	$routeProvider
-	.when('/heroes/:id/:battle_tag*', {
+	.when('/heroes/:id/:battle_tag_name/:battle_tag_number', {
 		controller: 'heroesController',
 		templateUrl: '../templates/Heroes.html'
 	})
