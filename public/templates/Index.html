@@ -16,7 +16,7 @@
   <div class="row" ng-repeat="hero in data.heroes">
     <div class="col-md-12" ng-if="hero.id === data.lastHeroPlayed" ng-repeat="(key, item) in hero">{{key}} : {{item}}</div>
     <button ng-if="hero.id === data.lastHeroPlayed" class="btn btn-primary">
-      <a href="">More Details</a>
+      <a href="#/heroes/{{hero.id}}/{{data.battleTag}}">View</a>
     </button>
   </div>
 </div>
@@ -27,7 +27,7 @@
       {{key}} : {{item}}
     </div>
     <button ng-if="hero.id !== data.lastHeroPlayed" class="btn btn-primary">
-      <a href="#/heroes/7">More Details</a>
+      <a href="#/heroes/{{hero.id}}/{{data.battleTag}}">View</a>
     </button><br>
     <span ng-if="hero.id !== data.lastHeroPlayed" >------------</span>
   </div>

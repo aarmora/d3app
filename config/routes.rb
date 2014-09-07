@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'getJson' => 'home#getJson'
+  get 'getHero' => 'home#getHero'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

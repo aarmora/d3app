@@ -1,3 +1,52 @@
-zzz
-
-{{pizza}}
+<div class="container">
+	<div class="row">
+		<h3>{{data.name}}</h3>
+		<h4>General Info</h4>
+		<div class="col-md-4">
+			<div class="col-md-6">Level</div>
+			<div class="col-md-6">{{data.level}}</div>
+		</div>
+		<div class="cold-md-8">z</div>
+		<div class="col-md-4">
+			<div class="col-md-6">Paragon Level</div>
+			<div class="col-md-6">{{data.paragonLevel}}</div>
+		</div>
+		<div class="cold-md-8">z</div>
+		<div class="col-md-4">
+			<div class="col-md-6">Last Played</div>
+			<div class="col-md-6">{{data.last-updated | date}}</div>
+		</div>
+		<div class="cold-md-8">z</div>
+		<div class="col-md-4">
+			<div class="col-md-6">Elite Kills</div>
+			<div class="col-md-6">{{data.kills.elites}}</div>
+		</div>
+		<div class="cold-md-8">z</div>
+		<h4>Skills</h4>
+		<h5>Active</h5>
+		<div ng-repeat="activeSkill in data.skills.active">
+			<div class="col-md-6">
+				<div class="col-md-4">Skill</div>
+				<div class="col-md-8">{{activeSkill.skill.name}}</div>
+			</div>
+			<div class="col-md-6">
+				<div class="col-md-4">Rune</div>
+				<div class="col-md-8">{{activeSkill.rune.name}}</div>
+			</div>
+		</div>
+		<h5>Passive</h5>
+		<div ng-repeat="passiveSkill in data.skills.passive">
+			<div class="col-md-12">
+				<div class="col-md-2">Skill</div>
+				<div class="col-md-10">{{passiveSkill.skill.name}}</div>
+			</div>
+		</div>
+		<h4>Stats</h4>
+		<div ng-repeat="(key, stat) in data.stats">
+			<div class="col-md-12">
+				<div class="col-md-2">{{key}}</div>
+				<div class="col-md-10">{{stat}}</div>
+			</div>
+		</div>
+	</div>
+</div>
